@@ -22,7 +22,7 @@ def average_age(ages: List[float]) -> float:
         >>> average_age([20.0, 22.0, 24.0])
         22.0
     """
-    raise NotImplementedError
+    raise NotImplementedError()
 
 
 def average_score(scores: List[float]) -> float:
@@ -39,4 +39,5 @@ def average_score(scores: List[float]) -> float:
         >>> average_score([90.0, 95.0, 85.0])
         90.0
     """
-    raise NotImplementedError
+    raise NotImplementedError()
+

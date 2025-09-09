@@ -16,7 +16,7 @@ def _best_time(fn, data, repeats=5):
 
 def test_average_age_performance(capfd):
     rng = random.Random(12345)
-    data = [rng.random() * 1000.0 for _ in range(300_000)]  # 300k floats
+    data = [rng.random() * 1000.0 for _ in range(3_000_000)]  # 3M floats
 
     best, mean = _best_time(average_age, data, repeats=5)
 
