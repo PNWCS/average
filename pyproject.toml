@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "average-refactor-demo"
+version = "0.1.0"
+description = "Stubs for average_age/average_score with pytest tests (correctness + perf demo)."
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{ include = "metrics", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"
