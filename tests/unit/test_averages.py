@@ -1,5 +1,7 @@
 import pytest
+
 from metrics import average_age, average_score
+
 
 @pytest.mark.parametrize(
     "ages,expected",

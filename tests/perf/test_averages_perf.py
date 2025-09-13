@@ -1,9 +1,11 @@
 import random
-import time
 import statistics
+import time
+
 import pytest
 
 from metrics import average_age
+
 
 def _best_time(fn, data, repeats=5):
     times = []
@@ -14,6 +16,10 @@ def _best_time(fn, data, repeats=5):
         times.append(t1 - t0)
     return min(times), statistics.mean(times)
 
+
+EXPECTED_MAX_TIME = 0.05  # 50 milliseconds
+
+
 def test_average_age_performance(capfd):
     rng = random.Random(12345)
     data = [rng.random() * 1000.0 for _ in range(3_000_000)]  # 3M floats
@@ -21,7 +27,6 @@ def test_average_age_performance(capfd):
     best, mean = _best_time(average_age, data, repeats=5)
 
     # Hard-coded expected time threshold (adjust as needed for classroom environment)
-    EXPECTED_MAX_TIME = 0.05   # 50 milliseconds
     print(f"average_age(): best={best:.6f}s mean={mean:.6f}s (allowed <= {EXPECTED_MAX_TIME:.6f}s)")
 
     # Performance assertion

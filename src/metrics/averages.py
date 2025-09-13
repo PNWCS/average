@@ -1,16 +1,18 @@
-"""
-Averages for ages and scores.
+"""Averages for ages and scores.
 
 Start with the simplest working code; then refactor to remove duplication,
 and finally consider using built-ins (e.g., sum) for clarity and speed.
 All inputs are basic floats, no Union types.
 """
 
-from typing import List
 
-def average_age(ages: List[float]) -> float:
-    """
-    Compute the arithmetic mean of ages.
+def average(values: list[float]) -> float:
+    """Compute the arithmetic mean of a list of floats."""
+    return sum(values) / len(values)
+
+
+def average_age(ages: list[float]) -> float:
+    """Compute the arithmetic mean of ages.
 
     Args:
         ages: Non-empty list of ages as floats.
@@ -22,12 +24,11 @@ def average_age(ages: List[float]) -> float:
         >>> average_age([20.0, 22.0, 24.0])
         22.0
     """
-    raise NotImplementedError()
+    return average(ages)
 
 
-def average_score(scores: List[float]) -> float:
-    """
-    Compute the arithmetic mean of scores.
+def average_score(scores: list[float]) -> float:
+    """Compute the arithmetic mean of scores.
 
     Args:
         scores: Non-empty list of scores as floats.
@@ -39,5 +40,4 @@ def average_score(scores: List[float]) -> float:
         >>> average_score([90.0, 95.0, 85.0])
         90.0
     """
-    raise NotImplementedError()
-
+    return average(scores)

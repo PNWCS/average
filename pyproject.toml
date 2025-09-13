@@ -8,6 +8,10 @@ packages = [{ include = "metrics", from = "src" }]
 
 [tool.poetry.dependencies]
 python = ">=3.11,<3.13"
+ruff = "^0.13.0"
+pytest-cov = "^7.0.0"
+mypy = "^1.18.1"
+pre-commit = "^4.3.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.0"
@@ -15,3 +19,25 @@ pytest = "^8.2.0"
 [build-system]
 requires = ["poetry-core>=1.9.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "N", "W", "I", "UP", "B", "D"]
+ignore = ["E501"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = [
+    "D",
+    "N802",
+    "N803",
+    "S101",
+    "PLR2004",
+]
+[tool.ruff.lint.mccabe]
+max-complexity = 10
