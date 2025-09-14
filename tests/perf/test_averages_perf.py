@@ -17,7 +17,7 @@ def _best_time(fn, data, repeats=5):
     return min(times), statistics.mean(times)
 
 
-EXPECTED_MAX_TIME = 0.055  # 55 milliseconds
+EXPECTED_MAX_TIME = 0.054  # 54 milliseconds
 
 
 def test_average_age_performance(capfd):
